@@ -45,6 +45,16 @@
   font-weight: 500;
 }
 
+.skills-section .upper-box .text-box{
+  max-width: 620px;
+}
+
+.skills-section .upper-box .text-box p{
+  font-size: 17px;
+  line-height: 28px;
+  color: var(--text-color);
+}
+
 .skills-section .left-content{
   position: relative;
   display: block;
@@ -52,7 +62,7 @@
 
 .skills-section .left-content .inner-box .single-item{
   position: relative;
-  padding: 37px 100px 45px 150px;
+  padding: 22px 90px 22px 90px;
   border-bottom: 1px solid var(--secondary-color);
 }
 
@@ -63,19 +73,19 @@
 .skills-section .left-content .inner-box .single-item .year{
   position: absolute;
   left: 0px;
-  top: 37px;
+  top: 22px;
   display: block;
-  font-size: 16px;
-  line-height: 37px;
-  font-weight: 500;
-  color: var(--title-color);
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: 700;
+  color: var(--theme-color);
 }
 
 .skills-section .left-content .inner-box .single-item h3{
   position: relative;
   display: block;
-  font-size: 28px;
-  line-height: 37px;
+  font-size: 19px;
+  line-height: 26px;
   font-family: var(--title-font);
   font-weight: 500;
   margin-bottom: 4px;
@@ -84,20 +94,27 @@
 .skills-section .left-content .inner-box .single-item .text-box span{
   position: relative;
   display: block;
-  font-size: 20px;
-  line-height: 38px;
-  color: rgba(0, 0, 0, 0.35);
+  font-size: 15px;
+  line-height: 24px;
+  color: rgba(0, 0, 0, 0.45);
 }
 
 .skills-section .left-content .inner-box .single-item .count-text{
   position: absolute;
-  top: 29px;
+  top: 18px;
   right: 0px;
-  font-size: 80px;
-  line-height: 72px;
+  font-size: 44px;
+  line-height: 44px;
   font-family: var(--title-font);
   font-weight: 100;
   color: rgba(0, 0, 0, 0.10);
+}
+
+.skills-section .left-content .sources-note{
+  font-size: 13px;
+  line-height: 20px;
+  color: rgba(0, 0, 0, 0.35);
+  margin-top: 20px;
 }
 
 .skills-section .right-content{
