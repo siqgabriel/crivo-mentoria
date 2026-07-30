@@ -50,8 +50,8 @@
 
 .banner-section .content-box h2{
   display: block;
-  font-size: 64px;
-  line-height: 74px;
+  font-size: clamp(34px, 4.6vw, 64px);
+  line-height: clamp(42px, 5.2vw, 74px);
   font-weight: 500;
   margin-bottom: 28px;
 }

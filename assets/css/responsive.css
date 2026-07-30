@@ -160,12 +160,6 @@
 
 @media only screen and (max-width: 1200px){
 
-  .main-menu,
-  .sticky-header,
-  .main-header.style-one .outer-container:before{
-    display: none !important;
-  }
-
   .banner-section .image-layer{
     display: none;
   }
@@ -202,11 +196,6 @@
 
   .contact-section .info-content{
     margin-left: 0px;
-  }
-
-  .menu-area .mobile-nav-toggler{
-    display: block !important;
-    padding: 10px;
   }
 
   .funfact-section .outer-container{
@@ -985,6 +974,17 @@
 
 
 @media only screen and (max-width: 991px){
+
+  .main-menu,
+  .sticky-header,
+  .main-header.style-one .outer-container:before{
+    display: none !important;
+  }
+
+  .menu-area .mobile-nav-toggler{
+    display: block !important;
+    padding: 10px;
+  }
 
   .portfolio-section .owl-nav{
     display: none;

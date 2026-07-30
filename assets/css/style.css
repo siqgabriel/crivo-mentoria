@@ -584,8 +584,8 @@ img {
 .sec-title h2{
   position: relative;
   display: block;
-  font-size: 56px;
-  line-height: 66px;
+  font-size: clamp(30px, 3.8vw, 56px);
+  line-height: clamp(38px, 4.4vw, 66px);
   font-weight: 500;
 }
 

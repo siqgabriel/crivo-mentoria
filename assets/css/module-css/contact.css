@@ -17,8 +17,8 @@
 
 .contact-section .title-box .title-text h2{
   display: block;
-  font-size: 52px;
-  line-height: 64px;
+  font-size: clamp(28px, 3.6vw, 52px);
+  line-height: clamp(36px, 4.2vw, 64px);
   font-weight: 500;
   color: #fff;
 }

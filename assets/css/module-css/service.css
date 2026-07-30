@@ -34,8 +34,8 @@
 }
 
 .service-section .left-content .inner-box .text h3{
-  font-size: 36px;
-  line-height: 60px;
+  font-size: clamp(24px, 2.6vw, 36px);
+  line-height: clamp(34px, 3.6vw, 60px);
   font-family: var(--text-font);
   font-weight: 500;
   color: var(--title-color);
@@ -121,8 +121,8 @@
 .service-section .right-content .single-item h2{
   position: relative;
   display: block;
-  font-size: 34px;
-  line-height: 44px;
+  font-size: clamp(22px, 2.4vw, 34px);
+  line-height: clamp(30px, 3vw, 44px);
   font-weight: 500;
   margin-bottom: 20px;
 }
@@ -143,6 +143,60 @@
   line-height: 42px;
   font-weight: 500;
   color: rgba(255, 255, 255, 0.40);
+}
+
+.service-section .right-content .single-item .accordion-toggle{
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: var(--text-font);
+  font-size: 18px;
+  line-height: 32px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.55);
+  cursor: pointer;
+  transition: color 300ms ease;
+}
+
+.service-section .right-content .single-item .accordion-toggle:hover{
+  color: #fff;
+}
+
+.service-section .right-content .single-item .accordion-caret{
+  position: relative;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg);
+  transition: transform 300ms ease;
+}
+
+.service-section .right-content .single-item .accordion-toggle[aria-expanded="true"] .accordion-caret{
+  transform: rotate(-135deg);
+}
+
+.service-section .right-content .single-item .accordion-body{
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 400ms ease;
+}
+
+.service-section .right-content .single-item .accordion-body.is-open{
+  max-height: 200px;
+}
+
+.service-section .right-content .single-item .accordion-body p{
+  font-size: 16px;
+  line-height: 26px;
+  color: rgba(255, 255, 255, 0.55);
+  padding-top: 14px;
+  max-width: 420px;
 }
 
 .service-section .right-content .single-item .link{

@@ -107,8 +107,8 @@
 
 .testimonial-section .testimonial-block .content-box h2{
   display: block;
-  font-size: 26px;
-  line-height: 38px;
+  font-size: clamp(18px, 1.7vw, 26px);
+  line-height: clamp(28px, 2.4vw, 38px);
   font-weight: 400;
 }
 

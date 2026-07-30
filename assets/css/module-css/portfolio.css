@@ -93,8 +93,8 @@
 .portfolio-block-one .inner-box .content-box h2{
   position: relative;
   display: block;
-  font-size: 30px;
-  line-height: 40px;
+  font-size: clamp(20px, 2vw, 30px);
+  line-height: clamp(28px, 2.6vw, 40px);
   font-weight: 600;
   margin-bottom: 20px;
 }

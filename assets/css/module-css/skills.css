@@ -3,6 +3,7 @@
 /** skills-section **/
 
 .skills-section{
+  padding: 50px 0;
   position: relative;
 }
 
@@ -140,8 +141,8 @@
 .skills-section .right-content .inner-box .single-item h2{
   position: relative;
   display: block;
-  font-size: 72px;
-  line-height: 79px;
+  font-size: clamp(40px, 4.6vw, 72px);
+  line-height: clamp(46px, 5vw, 79px);
   font-family: var(--text-font);
   font-weight: 500;
 }
@@ -156,9 +157,9 @@
 .skills-section .right-content .inner-box .single-item .text-box .text{
   position: relative;
   display: block;
-  font-size: 22px;
-  line-height: 39px;
-  color: rgba(0, 0, 0, 0.30);
+  font-size: clamp(15px, 1.3vw, 18px);
+  line-height: 1.5;
+  color: rgba(0, 0, 0, 0.55);
 }
 
 .skills-section .right-content .inner-box .single-item .text-box .year{
