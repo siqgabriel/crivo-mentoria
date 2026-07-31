@@ -140,6 +140,31 @@
   resize: none;
 }
 
+.contact-section .form-group-recaptcha{
+  margin-bottom: 30px;
+}
+
+.contact-section .message-btn .theme-btn:disabled{
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.contact-section .form-success-message{
+  display: none;
+  font-size: 16px;
+  line-height: 26px;
+  color: #fff;
+  background: rgba(241, 135, 7, 0.15);
+  border: 1px solid var(--theme-color);
+  border-radius: 16px;
+  padding: 20px 24px;
+  margin-bottom: 30px;
+}
+
+.contact-section .form-success-message.is-visible{
+  display: block;
+}
+
 .contact-section .info-content{
   position: relative;
   display: block;
