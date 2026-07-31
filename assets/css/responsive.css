@@ -870,7 +870,7 @@
   }
 
   .portfolio-block-one .inner-box{
-    padding-left: 30px;
+    padding: 30px;
   }
 
   .work-page-three-section .title-box{
@@ -999,19 +999,83 @@
     padding-top: 20px;
   }
 
-  .testimonial-section .dots-style-one .owl-dots,
   .testimonial-section .dots-style-one .owl-nav,
-  .testimonial-section .testimonial-block .image-box,
   .instagram-section .big-text{
     display: none;
   }
 
   .testimonial-section .testimonial-block{
     padding-left: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: #f5f8fa;
+    border-radius: 30px;
+    padding: 50px 30px 40px 30px;
+  }
+
+  .testimonial-section .testimonial-block .image-box{
+    position: relative;
+    left: auto;
+    top: auto;
+    padding-bottom: 0px;
+    margin-bottom: 24px;
+  }
+
+  .testimonial-section .testimonial-block .image-box .image{
+    display: block;
+    width: 84px;
+    height: 84px;
+  }
+
+  .testimonial-section .testimonial-block .image-box .image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .testimonial-section .testimonial-block .image-box .icon-box{
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    font-size: 14px;
+    left: auto;
+    right: -6px;
+    bottom: -6px;
   }
 
   .testimonial-section .testimonial-block .content-box{
+    display: flex;
+    flex-direction: column;
     padding-bottom: 0px;
+    padding-top: 0px;
+    text-align: center;
+  }
+
+  .testimonial-section .testimonial-block .content-box .author-box{
+    order: 2;
+    margin-top: 22px;
+  }
+
+  .testimonial-section .testimonial-block .content-box h2{
+    order: 1;
+  }
+
+  .testimonial-section .dots-style-one .owl-dots{
+    position: relative;
+    left: auto;
+    bottom: auto;
+    transform: none;
+    display: flex;
+    justify-content: center;
+    width: auto;
+    padding-left: 0px;
+    margin-top: 34px;
+  }
+
+  .testimonial-section .dots-style-one .owl-dots:before{
+    display: none;
   }
 
   .instagram-section .sec-title{
@@ -1900,6 +1964,21 @@
 
 
 @media only screen and (max-width: 767px){
+  .portfolio-section .upper-box .text-box p {
+    font-size: 15px;
+    line-height: 25px;
+  }
+
+  .service-section .left-content .text-box p {
+    font-size: 15px;
+    line-height: 25px;
+  }
+  .banner-section .content-box .paragraph p{
+    width: 80%;
+    padding: 18px 0;
+    font-size: 12px;
+  }
+
   .banner-section .content-box h3{
     font-size: 12px;
     margin-bottom: 10px;
@@ -1971,6 +2050,7 @@
   }
 
   .service-section .left-content .inner-box{
+    display: none;
     margin-bottom: 30px;
   }
 

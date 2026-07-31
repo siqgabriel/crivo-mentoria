@@ -9,9 +9,10 @@
 
 .skills-section .upper-box{
   position: relative;
-  display: flex;
+  display: block;
   align-items: center;
   justify-content: space-between;
+  padding: 20px 20px;
 }
 
 .skills-section .upper-box .link a{
@@ -40,6 +41,7 @@
 }
 
 .skills-section .title-box h2{
+  
   font-size: 36px;
   line-height: 38px;
   font-weight: 500;
@@ -50,142 +52,70 @@
 }
 
 .skills-section .upper-box .text-box p{
-  font-size: 17px;
+    padding: 30px 0;
+  font-size: 15px;
   line-height: 28px;
   color: var(--text-color);
 }
 
-.skills-section .left-content{
+.context-stats-grid{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+.context-stat-card{
   position: relative;
+  background: #f5f8fa;
+  border-radius: 24px;
+  padding: 28px 30px;
+  transition: all 400ms ease;
+}
+
+.context-stat-card:hover{
+  background: #fff;
+  box-shadow: 0px 10px 30px 0px rgba(5, 65, 86, 0.08);
+}
+
+.context-stat-card .year{
   display: block;
-}
-
-.skills-section .left-content .inner-box .single-item{
-  position: relative;
-  padding: 22px 90px 22px 90px;
-  border-bottom: 1px solid var(--secondary-color);
-}
-
-.skills-section .left-content .inner-box .single-item:first-child{
-  border-top: 1px solid var(--secondary-color);
-}
-
-.skills-section .left-content .inner-box .single-item .year{
-  position: absolute;
-  left: 0px;
-  top: 22px;
-  display: block;
-  font-size: 24px;
-  line-height: 30px;
+  font-family: var(--text-font);
+  font-size: 34px;
+  line-height: 40px;
   font-weight: 700;
   color: var(--theme-color);
+  margin-bottom: 10px;
 }
 
-.skills-section .left-content .inner-box .single-item h3{
+.context-stat-card h3{
   position: relative;
   display: block;
-  font-size: 19px;
-  line-height: 26px;
+  font-size: 18px;
+  line-height: 25px;
   font-family: var(--title-font);
   font-weight: 500;
-  margin-bottom: 4px;
+  margin-bottom: 6px;
 }
 
-.skills-section .left-content .inner-box .single-item .text-box span{
+.context-stat-card span{
   position: relative;
   display: block;
   font-size: 15px;
-  line-height: 24px;
+  line-height: 23px;
   color: rgba(0, 0, 0, 0.45);
 }
 
-.skills-section .left-content .inner-box .single-item .count-text{
-  position: absolute;
-  top: 18px;
-  right: 0px;
-  font-size: 44px;
-  line-height: 44px;
-  font-family: var(--title-font);
-  font-weight: 100;
-  color: rgba(0, 0, 0, 0.10);
-}
-
-.skills-section .left-content .sources-note{
+.skills-section .sources-note{
   font-size: 13px;
   line-height: 20px;
   color: rgba(0, 0, 0, 0.35);
-  margin-top: 20px;
+  margin-top: 26px;
 }
 
-.skills-section .right-content{
-  position: relative;
-  display: block;
-}
-
-.skills-section .right-content .inner-box .single-item{
-  position: relative;
-  display: block;
-  background: #f5f8fa;
-  padding: 70px 48px 37px 32px;
-  margin-bottom: 44px;
-  border-radius: 30px;
-  z-index: 1;
-}
-
-.skills-section .right-content .inner-box .single-item:before{
-  position: absolute;
-  content: '';
-  background: #fff;
-  width: 100%;
-  height: 0%;
-  left: 0px;
-  bottom: 0px;
-  box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.10);
-  border-radius: 30px;
-  z-index: -1;
-  transition: all 500ms ease;
-}
-
-.skills-section .right-content .inner-box .single-item:hover:before{
-  height: 100%;
-  top: 0px;
-}
-
-.skills-section .right-content .inner-box .single-item:last-child{
-  margin-bottom: 0px;
-}
-
-.skills-section .right-content .inner-box .single-item h2{
-  position: relative;
-  display: block;
-  font-size: clamp(40px, 4.6vw, 72px);
-  line-height: clamp(46px, 5vw, 79px);
-  font-family: var(--text-font);
-  font-weight: 500;
-}
-
-.skills-section .right-content .inner-box .single-item .text-box{
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.skills-section .right-content .inner-box .single-item .text-box .text{
-  position: relative;
-  display: block;
-  font-size: clamp(15px, 1.3vw, 18px);
-  line-height: 1.5;
-  color: rgba(0, 0, 0, 0.55);
-}
-
-.skills-section .right-content .inner-box .single-item .text-box .year{
-  position: relative;
-  display: block;
-  font-size: 16px;
-  line-height: 39px;
-  font-weight: 700;
-  color: var(--title-color);
+@media only screen and (max-width: 767px){
+  .context-stats-grid{
+    grid-template-columns: 1fr;
+  }
 }
 
 .skills-section .skills-list li{

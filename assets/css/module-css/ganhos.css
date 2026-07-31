@@ -1,0 +1,88 @@
+
+
+/** ganhos-section **/
+
+.ganhos-section{
+  text-align: start;
+  position: relative;
+  padding: 110px 0px;
+  background: #fff;
+}
+
+.ganhos-section .upper-box{
+  max-width: 640px;
+  margin: 0 auto 60px auto;
+}
+
+.ganhos-list{
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.ganhos-item{
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding: 26px 0px;
+  border-bottom: 1px solid rgba(5, 65, 86, 0.10);
+  transition: all 400ms ease;
+}
+
+.ganhos-item:first-child{
+  border-top: 1px solid rgba(5, 65, 86, 0.10);
+}
+
+.ganhos-item:hover{
+  padding-left: 14px;
+}
+
+.ganhos-number{
+  position: relative;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: var(--secondary-color);
+  color: var(--theme-color);
+  font-family: var(--text-font);
+  font-size: 18px;
+  font-weight: 700;
+  transition: all 400ms ease;
+}
+
+.ganhos-item:hover .ganhos-number{
+  background: var(--theme-color);
+  color: #fff;
+}
+
+.ganhos-item p{
+  font-size: 19px;
+  line-height: 30px;
+  color: var(--title-color);
+  font-weight: 500;
+}
+
+@media only screen and (max-width: 767px){
+  .ganhos-section{
+    padding: 70px 0px;
+  }
+
+  .ganhos-item{
+    gap: 18px;
+    padding: 20px 0px;
+  }
+
+  .ganhos-number{
+    width: 42px;
+    height: 42px;
+    font-size: 15px;
+  }
+
+  .ganhos-item p{
+    font-size: 16px;
+    line-height: 26px;
+  }
+}

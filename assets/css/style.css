@@ -107,7 +107,7 @@ body {
 
 .large-container{
   max-width: 1470px;
-  padding: 0px 15px;
+  padding: 0px 20px;
   margin: 0 auto;
 }
 
@@ -970,7 +970,7 @@ html.lenis {
 .dots-style-one .owl-dots button{
   position: absolute;
   top: -14px;
-  right: 58px;
+  right: 70px;
   counter-increment: slides-num;
   font-size: 20px;
   line-height: 30px;
