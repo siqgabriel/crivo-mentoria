@@ -4,6 +4,14 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script>
+        // Evita que o navegador reabra a página numa posição de scroll antiga
+        // (ex: usuário volta do WhatsApp/app externo e o mobile restaura o scroll salvo).
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+        window.scrollTo(0, 0);
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 
     <title>Crivo Hub · Programa de Mentores Internos</title>
@@ -363,7 +371,7 @@
                 <div class="urgency-inner">
                     <div class="urgency-content" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="700">
                         <span class="mini-kicker">Por que fazer isso agora?</span>
-                        <div class="sec-title mb_30">
+                        <div class="sec-title sec-title-animation animation-style2 mb_30">
                             <h2 class="title-animation">É urgente circular <span>o conhecimento na empresa.</span></h2>
                         </div>
                         <p>Temos gestores despreparados, times desengajados e talentos deixando as organizações.</p>
@@ -397,7 +405,7 @@
             <div class="large-container">
                 <div class="upper-box" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="700">
                     <span class="mini-kicker">Posicionamento</span>
-                    <div class="sec-title">
+                    <div class="sec-title sec-title-animation animation-style2">
                         <h2 class="title-animation">Formar pessoas pede <span>visão de anfitriã.</span></h2>
                     </div>
                     <p class="posicionamento-intro">Reunir gerações, cargos e histórias diferentes numa mesma jornada de
@@ -689,7 +697,7 @@
             <div class="large-container">
                 <div class="upper-box" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="700">
                     <span class="mini-kicker">Ganhos além dos números</span>
-                    <div class="sec-title">
+                    <div class="sec-title sec-title-animation animation-style2">
                         <h2 class="title-animation">O que a mentoria <span>destrava na sua empresa.</span></h2>
                     </div>
                 </div>
@@ -731,7 +739,7 @@
             <div class="large-container">
                 <div class="upper-box" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="700">
                     <span class="mini-kicker light">Preparo para quem conduz</span>
-                    <div class="sec-title light">
+                    <div class="sec-title light sec-title-animation animation-style2">
                         <h2 class="title-animation">Competências <span>trabalhadas com os mentores.</span></h2>
                     </div>
                 </div>
@@ -777,7 +785,7 @@
             <div class="large-container">
                 <div class="upper-box" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="700">
                     <span class="mini-kicker">Como funciona</span>
-                    <div class="sec-title">
+                    <div class="sec-title sec-title-animation animation-style2">
                         <h2 class="title-animation">A jornada do programa, <span>etapa por etapa.</span></h2>
                     </div>
                     <p class="comofunciona-intro">Doze etapas organizadas em quatro fases. Clique para abrir cada uma.

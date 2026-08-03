@@ -754,16 +754,25 @@
 
 	const lenis = new Lenis()
 
-	lenis.on('scroll', () => {
+	// Mantém o GSAP ScrollTrigger sincronizado com a posição real do Lenis.
+	// Sem isso, o ScrollTrigger recalcula gatilhos com base no scroll nativo
+	// enquanto o Lenis já moveu a página para outra posição - a divergência
+	// entre os dois é o que causa saltos de scroll (mais visível no mobile,
+	// onde a barra de endereço aparecer/sumir dispara refresh com frequência).
+	lenis.on('scroll', ScrollTrigger.update)
 
+	gsap.ticker.add((time) => {
+		lenis.raf(time * 1000)
 	})
 
-	function raf(time) {
-		lenis.raf(time)
-		requestAnimationFrame(raf)
-	}
+	gsap.ticker.lagSmoothing(0)
 
-	requestAnimationFrame(raf)
+	// Depois que tudo carregar (fontes, imagens, reCAPTCHA), a altura real
+	// da página pode mudar - força o Lenis e o ScrollTrigger a recalcular.
+	window.addEventListener('load', function () {
+		lenis.resize()
+		ScrollTrigger.refresh()
+	})
 
 
 	if($('.curved-circle').length) {
