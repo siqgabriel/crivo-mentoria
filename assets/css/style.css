@@ -562,6 +562,25 @@ img {
   }
 }
 
+.img-top {
+  border-radius: 20px;
+  box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.06);
+  height: 200px;
+  width: 100%;
+  background-image: url(../images/context.jpg);
+  background-position: bottom;
+  background-size: cover;
+}
+
+.img-top1 {
+  border-radius: 20px;
+  box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.06);
+  height: 200px;
+  width: 100%;
+  background-image: url(../images/context1.jpg);
+  background-position: center;
+  background-size: cover;
+}
 
 
 .sec-title{

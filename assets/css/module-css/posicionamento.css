@@ -10,9 +10,15 @@
 }
 
 .posicionamento-section .upper-box{
-  max-width: 760px;
-  margin: 0 0 60px 0;
+  position: relative;
+  display: grid;
+  grid-template-columns: 60% 40%;
+  gap: 22px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 20px;
 }
+
 
 .posicionamento-section .upper-box .mini-kicker{
   display: block;
@@ -23,11 +29,12 @@
   transform: translateX(-50%);
 }
 
+
 .posicionamento-intro{
   font-size: 17px;
   line-height: 28px;
   color: var(--text-color);
-  margin-top: 24px;
+  padding: 30px 0;
 }
 
 .posicionamento-grid{
