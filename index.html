@@ -50,6 +50,220 @@
     <link href="assets/css/module-css/proposito.css" rel="stylesheet">
     <link href="assets/css/responsive.css" rel="stylesheet">
 
+    <!-- Pop-up: download do e-book (adicionado) -->
+    <style>
+        .ceb-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 99999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background: rgba(5, 65, 86, 0.72);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity .4s ease, visibility .4s ease;
+        }
+
+        .ceb-overlay.is-visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        body.ceb-no-scroll {
+            overflow: hidden;
+        }
+
+        .ceb-modal {
+            position: relative;
+            width: 100%;
+            max-width: 880px;
+            max-height: 90vh;
+            overflow-y: auto;
+            background: #fff;
+            border-radius: 26px;
+            box-shadow: 0 40px 90px rgba(5, 65, 86, 0.45);
+            transform: translateY(24px) scale(.96);
+            opacity: 0;
+            transition: transform .45s cubic-bezier(.19, 1, .22, 1), opacity .45s ease;
+        }
+
+        .ceb-overlay.is-visible .ceb-modal {
+            transform: translateY(0) scale(1);
+            opacity: 1;
+        }
+
+        .ceb-modal-inner {
+            display: grid;
+            grid-template-columns: 0.85fr 1.15fr;
+            align-items: stretch;
+        }
+
+        .ceb-visual {
+            position: relative;
+            background: linear-gradient(145deg, #F18707 0%, #ff9d2e 55%, #F18707 100%);
+            border-radius: 26px 0 0 26px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 36px 24px;
+            overflow: hidden;
+        }
+
+        .ceb-visual::before {
+            content: "";
+            position: absolute;
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.14);
+            top: -60px;
+            right: -60px;
+        }
+
+        .ceb-visual img {
+            position: relative;
+            max-width: 100%;
+            width: 440px;
+            height: auto;
+            filter: drop-shadow(0 25px 35px rgba(5, 65, 86, 0.35));
+        }
+
+        .ceb-content {
+            padding: 44px 44px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .ceb-eyebrow {
+            display: inline-block;
+            align-self: flex-start;
+            font-family: 'Unbounded', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+            color: #F18707;
+            background: rgba(241, 135, 7, 0.1);
+            padding: 6px 14px;
+            border-radius: 999px;
+            margin-bottom: 18px;
+        }
+
+        .ceb-title {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 600;
+            font-size: 26px;
+            line-height: 1.25;
+            color: #054156;
+            margin: 0 0 14px;
+        }
+
+        .ceb-text {
+            font-size: 15.5px;
+            line-height: 1.6;
+            color: #4a5d64;
+            margin: 0 0 26px;
+        }
+
+        .ceb-text strong {
+            color: #005074;
+        }
+
+        .ceb-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+            color: #fff;
+            background: #F18707;
+            border: none;
+            border-radius: 50px;
+            padding: 16px 30px;
+            text-decoration: none;
+            box-shadow: 0 14px 28px rgba(241, 135, 7, 0.35);
+            transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
+        }
+
+        .ceb-btn:hover {
+            background: #054156;
+            transform: translateY(-2px);
+            box-shadow: 0 18px 32px rgba(5, 65, 86, 0.3);
+            color: #fff;
+        }
+
+        .ceb-later {
+            align-self: center;
+            margin-top: 16px;
+            background: none;
+            border: none;
+            font-family: 'Unbounded', sans-serif;
+            font-size: 12.5px;
+            color: #8599a0;
+            cursor: pointer;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        .ceb-later:hover {
+            color: #054156;
+        }
+
+        .ceb-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            z-index: 2;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            border: none;
+            background: rgba(5, 65, 86, 0.08);
+            color: #054156;
+            font-size: 15px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background .2s ease, transform .2s ease;
+        }
+
+        .ceb-close:hover {
+            background: rgba(5, 65, 86, 0.16);
+            transform: rotate(90deg);
+        }
+
+        @media (max-width: 767px) {
+            .ceb-modal-inner {
+                grid-template-columns: 1fr;
+            }
+
+            .ceb-visual {
+                border-radius: 26px 26px 0 0;
+                padding: 30px 20px;
+            }
+
+            .ceb-visual img {
+                width: 170px;
+            }
+
+            .ceb-content {
+                padding: 32px 26px 30px;
+            }
+
+            .ceb-title {
+                font-size: 21px;
+            }
+        }
+    </style>
+
 </head>
 
 
@@ -93,6 +307,36 @@
             </div>
         </div>
         <!-- preloader end -->
+
+
+        <!-- pop-up: download do e-book (adicionado, aparece após o preloader) -->
+        <div class="ceb-overlay" id="cebOverlay" aria-hidden="true">
+            <div class="ceb-modal" role="dialog" aria-modal="true" aria-labelledby="cebTitle">
+                <button type="button" class="ceb-close" id="cebClose" aria-label="Fechar pop-up">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </button>
+                <div class="ceb-modal-inner">
+                    <div class="ceb-visual">
+                        <img src="assets/images/ebook-mentoria-mockup.png"
+                            alt="E-book Crivo Hub: Mentoria não acontece por acaso">
+                    </div>
+                    <div class="ceb-content">
+                        <span class="ceb-eyebrow">Material gratuito</span>
+                        <h3 id="cebTitle" class="ceb-title">Mentoria não acontece por acaso</h3>
+                        <p class="ceb-text">Baixe gratuitamente o e-book da Crivo Hub e descubra o que transforma
+                            encontros em <strong>relações de aprendizagem</strong>, feito de uma Anfitriã de
+                            Aprendizagem.</p>
+                        <a href="https://crivohub.com.br/pilulas-crivo/ebook-mentoria/" target="_blank"
+                            rel="noopener" class="ceb-btn" id="cebDownloadBtn">
+                            Quero baixar o e-book
+                            <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                        <button type="button" class="ceb-later" id="cebLater">Agora não, obrigado</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- pop-up: fim -->
 
 
         <!-- main header -->
@@ -1179,6 +1423,84 @@
                 successMsg.classList.add('is-visible');
                 contactForm.style.display = 'none';
             }
+        })();
+    </script>
+
+    <!-- pop-up: download do e-book - exibição após o preloader (adicionado) -->
+    <script>
+        (function () {
+            var overlay = document.getElementById('cebOverlay');
+            if (!overlay) return;
+
+            var SHOW_KEY = 'crivoEbookModalShown';
+
+            function alreadyShown() {
+                try { return sessionStorage.getItem(SHOW_KEY) === '1'; } catch (e) { return false; }
+            }
+            function markShown() {
+                try { sessionStorage.setItem(SHOW_KEY, '1'); } catch (e) { }
+            }
+
+            function openModal() {
+                if (alreadyShown()) return;
+                overlay.classList.add('is-visible');
+                overlay.setAttribute('aria-hidden', 'false');
+                document.body.classList.add('ceb-no-scroll');
+                markShown();
+            }
+
+            function closeModal() {
+                overlay.classList.remove('is-visible');
+                overlay.setAttribute('aria-hidden', 'true');
+                document.body.classList.remove('ceb-no-scroll');
+            }
+
+            var closeBtn = document.getElementById('cebClose');
+            var laterBtn = document.getElementById('cebLater');
+            var downloadBtn = document.getElementById('cebDownloadBtn');
+            if (closeBtn) closeBtn.addEventListener('click', closeModal);
+            if (laterBtn) laterBtn.addEventListener('click', closeModal);
+            if (downloadBtn) downloadBtn.addEventListener('click', closeModal);
+            overlay.addEventListener('click', function (e) {
+                if (e.target === overlay) closeModal();
+            });
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') closeModal();
+            });
+
+            // Dispara assim que o preloader (#handle-preloader / .loader-wrap) terminar,
+            // sem depender ou alterar o assets/js/script.js existente.
+            var triggered = false;
+            function triggerAfterPreloader() {
+                if (triggered) return;
+                triggered = true;
+                setTimeout(openModal, 500);
+            }
+
+            var loaderWrap = document.querySelector('.loader-wrap');
+            if (loaderWrap) {
+                var observer = new MutationObserver(function () {
+                    var style = window.getComputedStyle(loaderWrap);
+                    var hiddenByClass = loaderWrap.classList.contains('loaded') ||
+                        loaderWrap.classList.contains('hidden') ||
+                        loaderWrap.classList.contains('loader-hidden');
+                    var hiddenByStyle = style.display === 'none' ||
+                        style.visibility === 'hidden' ||
+                        parseFloat(style.opacity) === 0;
+                    if (hiddenByClass || hiddenByStyle || !document.body.contains(loaderWrap)) {
+                        observer.disconnect();
+                        triggerAfterPreloader();
+                    }
+                });
+                observer.observe(loaderWrap, { attributes: true, attributeFilter: ['class', 'style'], childList: true });
+                observer.observe(document.body, { childList: true });
+            }
+
+            // Fallbacks, caso o script do tema demore ou não rode no ambiente de teste
+            window.addEventListener('load', function () {
+                setTimeout(triggerAfterPreloader, 2500);
+            });
+            setTimeout(triggerAfterPreloader, 6000);
         })();
     </script>
 
